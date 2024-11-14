@@ -44,7 +44,7 @@ class LatestExchangeRateView(APIView):
 
                 response_data = {
                     "currency_pair": f"{base_code}{target_code}",
-                    "exchange_rate": exchange_rate.exchange_rate
+                    "exchange_rate": float(exchange_rate.exchange_rate)
                 }
                 return Response(response_data, status=status.HTTP_200_OK)
 
